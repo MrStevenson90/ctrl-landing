@@ -1,0 +1,489 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.logo {
+    height: 120px;
+    width: auto;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-overlay {
+    text-align: center;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #ccc;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Content Sections */
+.content-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #111 0%, #000 100%);
+}
+
+.section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.feature-list {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.feature-list li {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+    color: #ccc;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+/* Video Sections */
+.video-section {
+    position: relative;
+    padding: 80px 0;
+    background: #111;
+}
+
+.video-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.video-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.video-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.cv-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #222;
+}
+
+.fullscreen-video-section {
+    height: 60vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.fullscreen-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Advantage Section */
+.advantage-section {
+    padding: 120px 0;
+    background: #000;
+    text-align: center;
+}
+
+.advantage-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.highlight {
+    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(90deg, #333, #666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Image Slider */
+.slider-section {
+    padding: 80px 0;
+    background: #111;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    height: 400px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #666;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: #fff;
+}
+
+/* Mini Video Section */
+.mini-video-section {
+    height: 40vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.mini-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Footer */
+.footer {
+    padding: 100px 0 60px;
+    background: linear-gradient(180deg, #000 0%, #111 100%);
+    text-align: center;
+}
+
+.footer-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #ccc;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.contact-item a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #fff;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .feature-list li {
+        font-size: 1.1rem;
+    }
+    
+    .advantage-title {
+        font-size: 2rem;
+    }
+    
+    .footer-title {
+        font-size: 2rem;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .slider-btn {
+        font-size: 1.5rem;
+        padding: 10px 15px;
+    }
+    
+    .prev-btn {
+        left: 10px;
+    }
+    
+    .next-btn {
+        right: 10px;
+    }
+    
+    .slide {
+        height: 250px;
+    }
+    
+    .hero-overlay {
+        padding: 20px;
+    }
+    
+    .logo {
+        height: 90px;
+    }
+    
+    .logo-container {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .video-wrapper {
+        height: 300px;
+    }
+    
+    .video-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .video-wrapper {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .content-section {
+        padding: 60px 0;
+    }
+    
+    .advantage-section {
+        padding: 80px 0;
+    }
+    
+    .footer {
+        padding: 60px 0 40px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .advantage-title {
+        font-size: 1.5rem;
+    }
+    
+    .logo {
+        height: 60px;
+    }
+    
+    .logo-container {
+        top: 10px;
+        left: 10px;
+    }
+    
+    .video-wrapper {
+        height: 250px;
+    }
+    
+    .video-title {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .video-wrapper {
+        max-width: 400px;
+    }
+}
