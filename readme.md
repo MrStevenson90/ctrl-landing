@@ -1,176 +1,148 @@
 CTRL Sports Production Services - Landing Page
-A modern, responsive landing page for CTRL Sports showcasing AI-powered autonomous sports production technology.
-🚀 Features
+A modern, responsive landing page for CTRL Sports showcasing AI-powered autonomous sports production technology. 🚀
 
-Responsive Design - Optimized for desktop, tablet, and mobile
-Video Integration - Autoplay videos with smooth scroll triggers
-Interactive Image Slider - Touch/swipe support with auto-advance
-Smooth Animations - Intersection Observer API for scroll-triggered effects
-Performance Optimized - Throttled events and efficient rendering
+Note: A live demo can be viewed at: http://ctrlsports.co
 
+✨ Features
+Responsive Design: Optimized for a seamless experience on desktop, tablet, and mobile devices.
+
+Video Integration: Background videos autoplay on scroll, engaging users with dynamic content.
+
+Interactive Image Slider: A touch-friendly, auto-advancing slider to showcase a portfolio.
+
+Smooth Animations: Utilizes the Intersection Observer API for elegant, scroll-triggered animations.
+
+Performance Optimized: Employs event throttling and efficient rendering for a smooth user experience.
+
+🛠️ Technologies Used
 📁 Project Structure
 ctrl-sports-landing/
 ├── index.html              # Main HTML file
 ├── src/
-│   ├── main.js             # JavaScript functionality
-│   └── style.css           # CSS styles
+│   ├── main.js             # Core JavaScript functionality
+│   └── style.css           # All CSS styles
 ├── img/
 │   ├── logo.png            # CTRL logo
-│   ├── 1.jpg - 6.jpg       # Slider images (excluding 4.jpg)
+│   └── 1.jpg - 6.jpg       # Slider images
 ├── vid/
 │   ├── pro.mp4             # Hero video
 │   ├── cv.mp4              # AI demonstration video
 │   ├── cam.mp4             # Camera technology video
 │   └── mini.mp4            # Footer video
-└── README.md               # This file
-🛠 Setup Instructions
+└── README.md
+🚀 Getting Started
 Prerequisites
+Node.js and npm
 
-Node.js and npm (for Vite)
-Modern web browser
+A modern web browser (Chrome, Firefox, Safari, etc.)
 
-Installation
+Installation & Setup
+Clone the repository:
 
-Clone/Download the project files
-Install Vite if not already installed:
-bashnpm install -g vite
+Bash
 
-Navigate to project directory
-Start development server:
-bashvite
+git clone https://github.com/your-username/ctrl-sports-landing.git
+Navigate to the project directory:
 
-Open browser to http://localhost:3000
+Bash
 
-File Requirements
-Ensure all media files are in place:
+cd ctrl-sports-landing
+Install Vite (if not already installed globally):
 
-Videos: Place .mp4 files in /vid folder
-Images: Place logo.png and slider images in /img folder
-Fonts: Inter font loaded via Google Fonts CDN
+Bash
+
+npm install -g vite
+Start the development server:
+
+Bash
+
+vite
+Open your browser and navigate to http://localhost:5173 (or the port specified by Vite in your terminal).
 
 🎨 Design System
 Colors
-
 Primary Background: #000 (Black)
+
 Secondary Background: #111 (Dark Grey)
-Text Primary: #fff (White)
-Text Secondary: #ccc (Light Grey)
-Accents: #333, #666 (Grey variants)
+
+Primary Text: #fff (White)
+
+Secondary Text: #ccc (Light Grey)
+
+Accents: #333, #666
 
 Typography
+Font Family: Inter (from Google Fonts)
 
-Font Family: Inter (Google Fonts)
 Weights: 300, 400, 500, 600, 700
 
 Breakpoints
-
 Mobile: ≤ 480px
+
 Tablet: ≤ 768px
+
 Desktop: > 768px
 
-📱 Sections Overview
-
-Hero Section - Full-screen video with overlay text
-Autonomous Production - Feature list with emoji headers
-AI Demo Video - Containerized autoplay video
-Production Services - Cost reduction messaging
-Camera Technology - Full-width background video
-Full-Service Production - Service capabilities
-Speed Advantage - Key differentiator message
-Image Slider - Interactive portfolio showcase
-Contact Footer - Business contact information
-Mini Video - Closing video element
-
-⚙️ JavaScript Features
+⚙️ Core JavaScript Features
 Video Management
+Smart Autoplay: Uses Intersection Observer to play videos only when they are visible in the viewport.
 
-Intersection Observer - Autoplay on scroll into view
-Performance Optimized - Pause when out of viewport
-Error Handling - Graceful fallbacks for failed videos
+Performance: Videos are automatically paused when they scroll out of view to conserve system resources.
 
-Image Slider
+Error Handling: Includes graceful fallbacks for video elements that fail to load.
 
-Touch Support - Swipe gestures on mobile
-Auto-advance - 5-second intervals
-Navigation Dots - Visual position indicators
-Responsive Controls - Adaptive button sizing
+Interactive Image Slider
+Touch Support: Native swipe gestures for navigation on mobile and tablet devices.
+
+Auto-Advance: Slides automatically transition every 5 seconds.
+
+Navigation: Clickable dots provide a visual indicator of the current slide and allow for direct navigation.
 
 Animations
+Scroll-Triggered Effects: Subtle fade-in and slide-up animations are triggered on scroll.
 
-Scroll Triggered - Fade-in and slide-up effects
-Parallax - Subtle hero video movement
-Smooth Scrolling - Enhanced anchor navigation
+Parallax: A subtle parallax effect is applied to the hero video for added depth.
 
-🔧 Customization
-Adding New Sections
-
-Add HTML structure in index.html
-Style in src/style.css
-Add scroll observer if needed in src/main.js
-
-Video Configuration
-Update video paths in:
-
-HTML <source> tags
-JavaScript preload array
-CSS responsive sizing
-
-Slider Images
-
-Add images to /img folder
-Update totalSlides in main.js
-Modify slider HTML structure
+Smooth Scrolling: Anchor links provide a smooth, animated scrolling experience.
 
 🚨 Troubleshooting
 Videos Not Playing
+File Path: Double-check that the video paths in your HTML are correct and that the files exist in the /vid/ folder.
 
-Check file paths - Ensure videos exist in /vid folder
-Verify formats - Use H.264 encoded MP4 files
-File size - Large files may timeout (recommend < 10MB)
-MIME types - Server should serve .mp4 as video/mp4
+File Format: Ensure videos are encoded in H.264 MP4 format for the best browser compatibility.
+
+File Size: Very large files (>10MB) may time out. Compress videos for web delivery.
+
+MIME Types: Ensure your server is correctly configured to serve .mp4 files with the video/mp4 MIME type.
 
 Slider Issues
+Image Count: Verify that the totalSlides variable in main.js matches the actual number of image slides in index.html.
 
-Image count - Verify totalSlides matches actual images
-Touch events - Test on actual mobile devices
-Performance - Check for console errors
+Console Errors: Check the browser's developer console for any JavaScript errors that could be breaking the slider.
 
-Mobile Problems
+📊 Performance & Deployment
+Performance Tips
+Video Optimization: Compress all videos to reduce file size without significant quality loss.
 
-Viewport - Ensure meta viewport tag is present
-Touch targets - Minimum 44px for buttons
-Performance - Test on slower devices
+Image Compression: Use modern formats like WebP and tools to compress images.
 
-📊 Performance Tips
+CDN: For production, serve static assets (images, videos, etc.) from a Content Delivery Network (CDN) for faster global delivery.
 
-Video optimization - Compress videos for web
-Image compression - Use WebP format where supported
-Lazy loading - Consider implementing for large galleries
-CDN - Serve static assets from CDN in production
+Production Deployment
+Build the project:
 
-🌐 Browser Support
+Bash
 
-Chrome 60+
-Firefox 55+
-Safari 11+
-Edge 79+
-Mobile Safari iOS 11+
-Chrome Mobile 60+
+vite build
+Upload: Deploy the contents of the generated dist/ folder to your web server or hosting provider.
 
-📈 Production Deployment
+Test: Thoroughly test all functionality, especially video playback and mobile responsiveness, on the live production environment.
 
-Build for production:
-bashvite build
+📞 Contact & License
+Demo & Inquiries: tom@ctrl.vision
 
-Upload dist/ folder to web server
-Configure server for proper MIME types
-Test all videos on production environment
-Verify mobile responsiveness
-
-📞 Contact & Support
-Demo Contact: tom@ctrl.vision
 LinkedIn: linkedin.com/company/ctrl-vision
-📄 License
+
 This project is proprietary to CTRL Sports Production Services.
 
-Built with ❤️ for the future of sports broadcasting
+Built with ❤️ for the future of sports broadcasting.
