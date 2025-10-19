@@ -1,5 +1,60 @@
 // Main JavaScript for CTRL Sports Landing Page
 
+class WaitlistModal {
+    constructor() {
+        this.modal = document.getElementById('waitlistModal');
+        this.closeBtn = document.getElementById('closeModal');
+        this.init();
+    }
+
+    init() {
+        // Check if modal was already shown in this session
+        const modalShown = sessionStorage.getItem('waitlistModalShown');
+        
+        if (!modalShown) {
+            // Show modal after a brief delay for better UX
+            setTimeout(() => {
+                this.show();
+            }, 1000);
+        }
+
+        // Event listeners
+        this.closeBtn.addEventListener('click', () => this.close());
+        this.modal.addEventListener('click', (e) => {
+            if (e.target === this.modal) {
+                this.close();
+            }
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+                this.close();
+            }
+        });
+
+        // Track when user clicks the waitlist button
+        const waitlistBtn = this.modal.querySelector('.waitlist-button');
+        if (waitlistBtn) {
+            waitlistBtn.addEventListener('click', () => {
+                sessionStorage.setItem('waitlistModalShown', 'true');
+                this.close();
+            });
+        }
+    }
+
+    show() {
+        this.modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    close() {
+        this.modal.classList.remove('active');
+        document.body.style.overflow = '';
+        sessionStorage.setItem('waitlistModalShown', 'true');
+    }
+}
+
 class CTRLLandingPage {
     constructor() {
         this.currentSlide = 0;
@@ -223,6 +278,9 @@ class CTRLLandingPage {
 
 // Enhanced loading and initialization
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize the waitlist modal
+    new WaitlistModal();
+
     // Initialize the landing page
     new CTRLLandingPage();
 
@@ -251,6 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Log page initialization
     console.log('CTRL Landing Page initialized');
     console.log('Total slides in slider:', 5);
+    console.log('Waitlist modal ready');
 });
 
 // Handle page visibility changes
@@ -275,3 +334,4 @@ document.addEventListener('visibilitychange', () => {
 
 // Export for potential external use
 window.CTRLLandingPage = CTRLLandingPage;
+window.WaitlistModal = WaitlistModal;
