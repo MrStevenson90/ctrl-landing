@@ -32,12 +32,26 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
+    <!-- Waitlist Modal -->
+    <div class="modal-overlay" id="waitlistModal">
+        <div class="modal-container">
+            <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
+            <div class="modal-content">
+                <h2 class="modal-title">Join the Future of Sports Broadcasting</h2>
+                <p class="modal-description">Be the first to experience autonomous sports production technology</p>
+                <a href="https://forms.gle/jtAtuGdbFeRAo3V77" class="waitlist-button" target="_blank" rel="noopener noreferrer">
+                    JOIN WAITLIST
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Logo -->
     <div class="logo-container">
         <img src="img/logo.png" alt="CTRL Logo" class="logo">
@@ -97,14 +111,6 @@
         </div>
     </section>
 
-    <!-- Cam Video Section -->
-    <section class="fullscreen-video-section">
-        <video class="fullscreen-video" muted loop playsinline>
-            <source src="vid/cam.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </section>
-
     <!-- Full-Service Production -->
     <section class="content-section slide-up">
         <div class="container">
@@ -136,8 +142,8 @@
                     <div class="slide"><img src="img/6.jpg" alt="Production Image 6"></div>
                 </div>
             </div>
-            <button class="slider-btn prev-btn">‹</button>
-            <button class="slider-btn next-btn">›</button>
+            <button class="slider-btn prev-btn" aria-label="Previous slide">‹</button>
+            <button class="slider-btn next-btn" aria-label="Next slide">›</button>
             <div class="slider-dots"></div>
         </div>
     </section>
@@ -145,8 +151,8 @@
     <!-- Footer -->
     <footer class="footer slide-up">
         <div class="container">
-            <h2 class="footer-title">🚀 Ready to Elevate Your Sports Coverage?</h2>
-            <p class="footer-subtitle">Transform your games into professional broadcasts. Contact us for a consultation and see our technology in action.</p>
+            <h2 class="footer-title">🚀 We are here to elevate sports</h2>
+            <p class="footer-subtitle">Everyone should get professional quality broadcast and analytics</p>
             
             <div class="contact-info">
                 <div class="contact-item">
@@ -155,19 +161,11 @@
                 </div>
                 <div class="contact-item">
                     <strong>LinkedIn:</strong>
-                    <a href="https://www.linkedin.com/company/ctrl-vision/" target="_blank">linkedin.com/company/ctrl-vision</a>
+                    <a href="https://www.linkedin.com/company/ctrl-vision/" target="_blank" rel="noopener noreferrer">linkedin.com/company/ctrl-vision</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Mini Video Section - At bottom -->
-    <section class="mini-video-section">
-        <video class="mini-video" autoplay muted loop playsinline>
-            <source src="vid/mini.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </section>
 
     <script type="module" src="src/main.js"></script>
 </body>
